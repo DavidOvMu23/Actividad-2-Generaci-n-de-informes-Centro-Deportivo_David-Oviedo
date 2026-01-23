@@ -7,7 +7,7 @@ namespace Model
     public class Repositorio
     {
         // es el objeto que abre la conexión con la base de datos.
-        private readonly CentroDeportivoEntities _context = new CentroDeportivoEntities();
+        private readonly Model1 _context = new Model1();
 
         // Comprueba si aún quedan plazas en la actividad (aforo disponible).
         // Recorre todas las reservas para contar cuántas son de esa actividad
@@ -145,7 +145,11 @@ namespace Model
         // Devuelve las reservas e incluye los datos de socio y actividad para mostrarlos en la vista.
         public List<Reserva> SeleccionarReservas()
         {
-            return _context.Reserva.Include("Socio").Include("Actividad").ToList();
+                return _context.Reserva.
+                                Include("Socio").
+                                Include("Actividad").
+                                ToList();
+
         }
 
         // Inserta una nueva reserva. Devuelve false si no hay aforo o si ya existe.

@@ -40,10 +40,10 @@
                     <TextBlock x:Name="label_subtitulo" Foreground="#5B6E7C" FontSize="12" ><Run Text="Gestiona reservas y accede "/><Run Language="es-es" Text="a "/><Run Text="socios y actividades"/></TextBlock>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button x:Name="button_socios" Content="Socios" Command="{Binding AbrirSociosCommand}" Width="120" Margin="0,0,8,0" Height="26"
-                            Background="{StaticResource PrimaryBrush}" Foreground="White" />
-                    <Button x:Name="button_Actividades" Content="Actividades" Command="{Binding AbrirActividadesCommand}" Width="140" Height="29"
-                            Background="{DynamicResource PrimaryDarkBrush}" Foreground="White" />
+                    <Button x:Name="button_socios" Content="Socios" Width="120" Margin="0,0,8,0" Height="26"
+                            Background="{StaticResource PrimaryBrush}" Foreground="White" Click="button_socios_Click" />
+                    <Button x:Name="button_Actividades" Content="Actividades"  Width="140" Height="29"
+                            Background="{DynamicResource PrimaryDarkBrush}" Foreground="White" Click="button_Actividades_Click" />
                 </StackPanel>
             </Grid>
         </Border>
