@@ -113,7 +113,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SociosReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>SociosReport.cs</LastGenOutput>
+      <LastGenOutput>SociosReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
