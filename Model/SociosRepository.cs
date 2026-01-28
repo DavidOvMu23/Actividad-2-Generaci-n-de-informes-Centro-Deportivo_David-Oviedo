@@ -13,7 +13,9 @@ namespace Model
             dt.Columns.Add("Email", typeof(string));
             dt.Columns.Add("Estado", typeof(string));
 
+            // Conexion a la base de datos.
             string conexion = "Server=localhost\\SQLEXPRESS;Database=CentroDeportivo;Trusted_Connection=True;";
+            // Consulta para obtener los socios y su estado
             string sql = @"SELECT Id AS ID, Nombre, Email, 
                                   CASE WHEN Activo = 1 THEN 'Activo' ELSE 'Inactivo' END AS Estado
                            FROM Socio";
@@ -23,6 +25,7 @@ namespace Model
             {
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
+                // Recorremos el reader y añadimos filas a la tabla en memoria.
                 while (dr.Read())
                 {
                     dt.Rows.Add(

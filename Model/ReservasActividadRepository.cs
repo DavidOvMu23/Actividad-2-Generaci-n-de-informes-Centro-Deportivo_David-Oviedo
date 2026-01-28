@@ -15,9 +15,11 @@ namespace Model
         {
             var ds = new DataSetReservasActividad();
 
+            // Cadena de conexión a la base de datos.
             string conexion = "Server=localhost\\SQLEXPRESS;Database=CentroDeportivo;Trusted_Connection=True;";
 
             
+            // Consulta para obtener los datos de la actividad seleccionada.
             string sqlActividad = @"SELECT Id, Nombre, AforoMaximo FROM Actividad WHERE Id = @IdActividad";
             using (SqlConnection cn = new SqlConnection(conexion))
             using (SqlCommand cmd = new SqlCommand(sqlActividad, cn))
@@ -26,12 +28,25 @@ namespace Model
                 cn.Open();
                 using (SqlDataReader dr = cmd.ExecuteReader())
                 {
+                    // Leemos las filas devueltas por la consulta de actividad.
+                    // Por cada fila creamos una nueva fila en la tabla Actividad del DataSet.
                     while (dr.Read())
                     {
                         var row = ds.Actividad.NewActividadRow();
                         row.Id = dr["Id"].ToString();
                         row.Nombre = dr["Nombre"].ToString();
-                        row.AforoMaximo = dr["AforoMaximo"] == DBNull.Value ? string.Empty : dr["AforoMaximo"].ToString();
+
+                        // Comprobamos si AforoMaximo es DBNull y lo asignamos en consecuencia.
+                        object aforoObj = dr["AforoMaximo"];
+                        if (aforoObj == DBNull.Value)
+                        {
+                            row.AforoMaximo = string.Empty;
+                        }
+                        else
+                        {
+                            row.AforoMaximo = aforoObj.ToString();
+                        }
+
                         ds.Actividad.AddActividadRow(row);
                     }
                 }
@@ -39,6 +54,7 @@ namespace Model
             }
 
             
+            // Consulta para obtener las reservas de la actividad.
             string sqlReservas = @"SELECT Id, SocioId, ActividadId, Fecha FROM Reserva WHERE ActividadId = @IdActividad";
             using (SqlConnection cn = new SqlConnection(conexion))
             using (SqlCommand cmd = new SqlCommand(sqlReservas, cn))
@@ -47,13 +63,26 @@ namespace Model
                 cn.Open();
                 using (SqlDataReader dr = cmd.ExecuteReader())
                 {
+                    // Leemos las reservas devueltas por la consulta.
+                    // Cada fila se mapea a la tabla Reserva del DataSet.
                     while (dr.Read())
                     {
                         var row = ds.Reserva.NewReservaRow();
                         row.Id = dr["Id"].ToString();
                         row.SocioId = dr["SocioId"].ToString();
                         row.ActividadId = dr["ActividadId"].ToString();
-                        row.Fecha = dr["Fecha"] == DBNull.Value ? string.Empty : dr["Fecha"].ToString();
+
+                        // Fecha puede ser DBNull; comprobamos y asignamos valor apropiado.
+                        object fechaObj = dr["Fecha"];
+                        if (fechaObj == DBNull.Value)
+                        {
+                            row.Fecha = string.Empty;
+                        }
+                        else
+                        {
+                            row.Fecha = fechaObj.ToString();
+                        }
+
                         ds.Reserva.AddReservaRow(row);
                     }
                 }
@@ -61,6 +90,7 @@ namespace Model
             }
 
             
+            // Consulta para obtener los socios que realizaron reserva en la actividad.
             string sqlSocios = @"
                 SELECT DISTINCT s.Id, s.Nombre, s.Email, s.Activo
                 FROM Socio s
@@ -73,13 +103,31 @@ namespace Model
                 cn.Open();
                 using (SqlDataReader dr = cmd.ExecuteReader())
                 {
+                    // Rellenamos la tabla Socio del DataSet con los resultados.
                     while (dr.Read())
                     {
                         var row = ds.Socio.NewSocioRow();
                         row.Id = dr["Id"].ToString();
                         row.Nombre = dr["Nombre"].ToString();
-                        row.Email = dr["Email"] == DBNull.Value ? string.Empty : dr["Email"].ToString();
-                        row.Activo = dr["Activo"] == DBNull.Value ? string.Empty : dr["Activo"].ToString();
+                        object emailObj = dr["Email"];
+                        if (emailObj == DBNull.Value)
+                        {
+                            row.Email = string.Empty;
+                        }
+                        else
+                        {
+                            row.Email = emailObj.ToString();
+                        }
+
+                        object activoObj = dr["Activo"];
+                        if (activoObj == DBNull.Value)
+                        {
+                            row.Activo = string.Empty;
+                        }
+                        else
+                        {
+                            row.Activo = activoObj.ToString();
+                        }
                         ds.Socio.AddSocioRow(row);
                     }
                 }

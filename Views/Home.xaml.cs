@@ -53,7 +53,10 @@ namespace Views
             dt.Columns.Add("NombreSocio", typeof(string));
             dt.Columns.Add("AforoMaximo", typeof(int));
 
+            // Construimos la tabla en memoria con las columnas esperadas por la vista.
+            // Cadena de conexión a la BD.
             string conexion = "Server=localhost\\SQLEXPRESS;Database=CentroDeportivo;Trusted_Connection=True;";
+            // Consulta para obtener las reservas de una actividad por nombre.
             string sql = @"
                 SELECT 
                     a.Nombre AS NombreActividad,
@@ -73,14 +76,40 @@ namespace Views
                 cmd.Parameters.AddWithValue("@NombreActividad", nombreActividad);
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
+                // Rellenamos la tabla con los resultados de la consulta.
                 while (dr.Read())
                 {
-                    dt.Rows.Add(
-                        dr["NombreActividad"].ToString(),
-                        dr["FechaReserva"] == DBNull.Value ? (object)DBNull.Value : Convert.ToDateTime(dr["FechaReserva"]),
-                        dr["NombreSocio"].ToString(),
-                        dr["AforoMaximo"] == DBNull.Value ? (object)DBNull.Value : Convert.ToInt32(dr["AforoMaximo"])
-                    );
+                    // Nombre actividad
+                    string nombreAct = dr["NombreActividad"].ToString();
+
+                    // FechaReserva: comprobamos DBNull
+                    object fechaObj = dr["FechaReserva"];
+                    object fechaVal;
+                    if (fechaObj == DBNull.Value)
+                    {
+                        fechaVal = DBNull.Value;
+                    }
+                    else
+                    {
+                        fechaVal = Convert.ToDateTime(fechaObj);
+                    }
+
+                    // Nombre socio
+                    string nombreSocio = dr["NombreSocio"].ToString();
+
+                    // AforoMaximo: comprobamos DBNull
+                    object aforoObj = dr["AforoMaximo"];
+                    object aforoVal;
+                    if (aforoObj == DBNull.Value)
+                    {
+                        aforoVal = DBNull.Value;
+                    }
+                    else
+                    {
+                        aforoVal = Convert.ToInt32(aforoObj);
+                    }
+
+                    dt.Rows.Add(nombreAct, fechaVal, nombreSocio, aforoVal);
                 }
             }
             return dt;
