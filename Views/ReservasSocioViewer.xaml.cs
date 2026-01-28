@@ -6,25 +6,25 @@ namespace Views
     /// <summary>
     /// Interaction logic for SociosReportViewer.xaml
     /// </summary>
-    public partial class SociosReportViewer : Window
+    public partial class ReservasSocioViewer : Window
     {
-        public SociosReportViewer()
+        public ReservasSocioViewer()
         {
             InitializeComponent();
 
-            
-            var vm = new SociosReportViewModel();
+           
+            var vm = new ReservasSocioViewModel();
 
             
             DataContext = vm;
 
            
-            var rpt = new SociosReport();
+            var rpt = new ReservasSocioReport();
 
            
-            rpt.SetDataSource(vm.SociosData);
+            rpt.SetDataSource(vm.HistorialDataSet);
 
-            
+           
             reportViewer.ViewerCore.ReportSource = rpt;
         }
     }

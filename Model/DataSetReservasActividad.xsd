@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetReservasActividad" targetNamespace="http://tempuri.org/DataSetReservasActividad.xsd" xmlns:mstns="http://tempuri.org/DataSetReservasActividad.xsd" xmlns="http://tempuri.org/DataSetReservasActividad.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetReservasActividad" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSetReservasActividad" msprop:Generator_DataSetName="DataSetReservasActividad">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Actividad" msprop:Generator_RowEvHandlerName="ActividadRowChangeEventHandler" msprop:Generator_RowDeletedName="ActividadRowDeleted" msprop:Generator_RowDeletingName="ActividadRowDeleting" msprop:Generator_RowEvArgName="ActividadRowChangeEvent" msprop:Generator_TablePropName="Actividad" msprop:Generator_RowChangedName="ActividadRowChanged" msprop:Generator_RowChangingName="ActividadRowChanging" msprop:Generator_TableClassName="ActividadDataTable" msprop:Generator_RowClassName="ActividadRow" msprop:Generator_TableVarName="tableActividad" msprop:Generator_UserTableName="Actividad">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="AforoMaximo" msprop:Generator_ColumnPropNameInRow="AforoMaximo" msprop:Generator_ColumnPropNameInTable="AforoMaximoColumn" msprop:Generator_ColumnVarNameInTable="columnAforoMaximo" msprop:Generator_UserColumnName="AforoMaximo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Reserva" msprop:Generator_RowEvHandlerName="ReservaRowChangeEventHandler" msprop:Generator_RowDeletedName="ReservaRowDeleted" msprop:Generator_RowDeletingName="ReservaRowDeleting" msprop:Generator_RowEvArgName="ReservaRowChangeEvent" msprop:Generator_TablePropName="Reserva" msprop:Generator_RowChangedName="ReservaRowChanged" msprop:Generator_RowChangingName="ReservaRowChanging" msprop:Generator_TableClassName="ReservaDataTable" msprop:Generator_RowClassName="ReservaRow" msprop:Generator_TableVarName="tableReserva" msprop:Generator_UserTableName="Reserva">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:string" minOccurs="0" />
+              <xs:element name="SocioId" msprop:Generator_ColumnPropNameInRow="SocioId" msprop:Generator_ColumnPropNameInTable="SocioIdColumn" msprop:Generator_ColumnVarNameInTable="columnSocioId" msprop:Generator_UserColumnName="SocioId" type="xs:string" minOccurs="0" />
+              <xs:element name="ActividadId" msprop:Generator_ColumnPropNameInRow="ActividadId" msprop:Generator_ColumnPropNameInTable="ActividadIdColumn" msprop:Generator_ColumnVarNameInTable="columnActividadId" msprop:Generator_UserColumnName="ActividadId" type="xs:string" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_UserColumnName="Fecha" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Socio" msprop:Generator_RowEvHandlerName="SocioRowChangeEventHandler" msprop:Generator_RowDeletedName="SocioRowDeleted" msprop:Generator_RowDeletingName="SocioRowDeleting" msprop:Generator_RowEvArgName="SocioRowChangeEvent" msprop:Generator_TablePropName="Socio" msprop:Generator_RowChangedName="SocioRowChanged" msprop:Generator_RowChangingName="SocioRowChanging" msprop:Generator_TableClassName="SocioDataTable" msprop:Generator_RowClassName="SocioRow" msprop:Generator_TableVarName="tableSocio" msprop:Generator_UserTableName="Socio">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_UserColumnName="Email" type="xs:string" minOccurs="0" />
+              <xs:element name="Activo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_UserColumnName="Activo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Reserva_Socio" msdata:parent="Reserva" msdata:child="Socio" msdata:parentkey="SocioId" msdata:childkey="Id" msprop:Generator_UserParentTable="Reserva" msprop:Generator_UserChildTable="Socio" msprop:Generator_RelationVarName="relationReserva_Socio" msprop:Generator_ChildPropName="GetSocioRows" msprop:Generator_ParentPropName="ReservaRow" msprop:Generator_UserRelationName="Reserva_Socio" />
+      <msdata:Relationship name="Reserva_Actividad" msdata:parent="Reserva" msdata:child="Actividad" msdata:parentkey="ActividadId" msdata:childkey="Id" msprop:Generator_UserParentTable="Reserva" msprop:Generator_UserChildTable="Actividad" msprop:Generator_RelationVarName="relationReserva_Actividad" msprop:Generator_UserRelationName="Reserva_Actividad" msprop:Generator_ChildPropName="GetActividadRows" msprop:Generator_ParentPropName="ReservaRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

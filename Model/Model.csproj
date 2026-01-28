@@ -53,6 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetReservasActividad.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReservasActividad.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetSocios.cs">
       <DependentUpon>DataSetSocios.xsd</DependentUpon>
     </Compile>
@@ -62,6 +67,8 @@
       <DependentUpon>DataSetSocios.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservasActividadRepository.cs" />
+    <Compile Include="ReservasSocioRepository.cs" />
     <Compile Include="SociosRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +76,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DataSetReservasActividad.xsc">
+      <DependentUpon>DataSetReservasActividad.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetReservasActividad.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReservasActividad.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetReservasActividad.xss">
+      <DependentUpon>DataSetReservasActividad.xsd</DependentUpon>
+    </None>
     <None Include="DataSetSocios.xsc">
       <DependentUpon>DataSetSocios.xsd</DependentUpon>
     </None>

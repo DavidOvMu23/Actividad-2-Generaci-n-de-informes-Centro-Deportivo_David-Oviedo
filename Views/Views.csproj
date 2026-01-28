@@ -60,11 +60,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ReservasPorActividad.xaml">
+    <Page Include="ReservasActividad.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Home.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReservasActividadViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReservasSocioViewer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -76,17 +84,35 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ReservasPorActividad.xaml.cs">
-      <DependentUpon>ReservasPorActividad.xaml</DependentUpon>
+    <Compile Include="ReservasActividad.xaml.cs">
+      <DependentUpon>ReservasActividad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReservasActividadReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservasActividadReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReservasSocioReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservasSocioReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SociosReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SociosReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReservasActividadViewer.xaml.cs">
+      <DependentUpon>ReservasActividadViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReservasSocioViewer.xaml.cs">
+      <DependentUpon>ReservasSocioViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="SociosReportViewer.xaml.cs">
       <DependentUpon>SociosReportViewer.xaml</DependentUpon>
@@ -110,6 +136,14 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservasActividadReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReservasActividadReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservasSocioReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReservasSocioReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SociosReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

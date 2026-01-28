@@ -1,0 +1,9 @@
+﻿<Window x:Class="Views.ReservasActividadViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:SAPBusinessObjects="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+        Title="WPF Crystal Report Viewer" Height="600" Width="800">
+    <Grid>
+        <SAPBusinessObjects:CrystalReportsViewer x:Name="crystalReportsViewer"/>
+    </Grid>
+</Window>
